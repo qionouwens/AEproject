@@ -34,15 +34,15 @@ public class Vector2D {
         return y;
     }
 
-     public Expression getMagnitude() {
+    public Expression getMagnitude() {
         return new Sqrt(new Add(new Mul(x, x), new Mul(y, y)));
     }
 
-     public Expression getAngle() {
+    public Expression getAngle() {
         return new Atan2(y, x);
     }
 
-     public Point getOrigin() {
+    public Point getOrigin() {
         return origin;
     }
 
@@ -50,9 +50,18 @@ public class Vector2D {
         return new Vector2D(origin, new Mul(x, new Int(s)), new Mul(y, new Int(s)));
     }
 
-     public Vector2D add(Vector2D v) {return new Vector2D(origin, new Add(x, v.getX()), new Add(y, v.getY()));}
+    public Vector2D add(Vector2D v) {return new Vector2D(origin, new Add(x, v.getX()), new Add(y, v.getY()));}
 
-     public Expression dot(Vector2D v) {
+    public Expression dot(Vector2D v) {
         return new Add(new Mul(x, v.getX()), new Mul(y, v.getY()));
+    }
+
+    @Override
+    public String toString() {
+        return "Vector{" +
+                "x=" + x.toString() +
+                ", y=" + y.toString() +
+                ", origin=" + origin.toString() +
+                '}';
     }
 }

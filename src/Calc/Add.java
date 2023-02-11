@@ -17,12 +17,21 @@ public class Add implements Expression {
         contents.add(second);
     }
 
+    public void add(Expression e) {
+        contents.add(e);
+    }
+
     public double evaluateNumerically() {
         double total = 0;
         for (Expression expr : contents) {
             total += expr.evaluateNumerically();
         }
         return total;
+    }
+
+    @Override
+    public Expression evaluate() {
+        throw new IllegalArgumentException();
     }
 
     @Override
