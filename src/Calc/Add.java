@@ -29,9 +29,12 @@ public class Add implements Expression {
         return total;
     }
 
-    @Override
     public Expression evaluate() {
-        throw new IllegalArgumentException();
+        if (contents.size() == 1) {
+            return contents.get(0);
+        }
+        List<Expression> newList = new ArrayList<>();
+
     }
 
     @Override
