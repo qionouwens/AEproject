@@ -29,14 +29,6 @@ public class Add implements Expression {
         return total;
     }
 
-    public Expression evaluate() {
-        if (contents.size() == 1) {
-            return contents.get(0);
-        }
-        List<Expression> newList = new ArrayList<>();
-
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
